@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Lisitenコーチングシステム(Discord管理版)</title>
+    <link rel="stylesheet" href="css/roadmap.css">
+    <style>
+
+.highlight {
+    color: #e53935; /* 明るめの緑。お好みで変更可能 */
+    font-weight: bold;
+}
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f8f8f8;
+            padding: 40px;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: auto;
+            margin-bottom: 60px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            color: #222;
+        }
+
+        h2 {
+            margin-top: 32px;
+            border-left: 6px solid #4caf50;
+            padding-left: 12px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 14px;
+        }
+
+        .box {
+            background: #f0f0f0;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-top: 12px;
+            margin-bottom: 20px;
+        }
+
+        .note {
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        strong {
+            color: #222;
+        }
+
+        .flow-image {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+.image-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.image-box {
+  width: 400px;
+  border-radius: 12px;position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background: #fff;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.clickable-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+  display: block;
+  object-fit: contain;
+}
+
+/* モーダル全体 */
+.modal {
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* モーダル内の画像 */
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+/* 閉じるボタン */
+.modal-close {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+    </style>
+</head>
+
+<body>
+
+        <div class="container">
+        <h1>過去個人コーチングの実績について</h1>
+        <p>
+            コーチングを実際に受けたプレイヤーは以下のように短い時間で<strong class="gold-text">challenger</strong>に到達しております。
+        </p>
+
+<div class="image-row">
+  <div class="image-box">
+    <img src="img/C2.png" alt="左画像" class="clickable-img" />
+    <div class="overlay-text">3ヵ月"チャレンジャー"到達</div>
+  </div>
+  <div class="image-box">
+    <img src="img/C1.png" alt="右画像" class="clickable-img" />
+    <div class="overlay-text">8ヵ月"チャレンジャー"到達</div>
+  </div>
+</div>
+
+<!-- モーダル -->
+<div id="modal" class="modal" style="display:none;">
+  <span id="modal-close" class="modal-close">&times;</span>
+  <img class="modal-content" id="modal-img" alt="拡大画像" />
+</div>
+
+        <ul>
+            <li>実際はプレイヤーが本気を出せば<span class="highlight">もっと早く</span>到達する事が可能です。</li>
+            <li>現在コーチング中プレイヤーは既に<span class="highlight">ゴールド⇒エメラルド到達(12日間)</span>
+        </ul>
+        <div class="box">
+            <strong>最低限チャレンジャー</strong>は当たり前という世界をお見せ出来ます。
+        </div>
+
+    <div class="container">
+        <h1>🎓 "Challenger育成システム"参加前に必ずお読みください</h1>
+        <p>
+            コーチングは誰でも受けられるものではありません。<br>
+            以下の<strong>条件を全て満たす人のみ</strong>参加が許可されます。
+        </p>
+        <ul>
+            <li>2025年<span class="highlight">12月1日までにChallenger</span>になる決意と努力があること</li>
+            <li><span class="highlight">2026年のLJLに確実に参加できる事</span>
+            <li><span class="highlight">〇〇〇(RazerTeam)</span>として活動をする事</li>
+            <li><span class="highlight">12月~スクリム等が20時~24時で参加出来る事</span></li>
+            <li>チームの一員として<span class="highlight">練習・報告・行動</span>の全てに責任を持てること</li>
+        </ul>
+        <div class="box">
+            この条件を満たせる人にだけ、<strong>本気のコーチング</strong>と<strong>LJL出場</strong>という現実の舞台を用意しています。
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>LJL出場までのコーチングロードマップ</h1>
+        <div class="roadmap">
+            <div class="roadmap-step active">
+                <h2>STEP 1：コーチングシステム参加条件確認</h2>
+                <p>このコーチングに参加するには、LJL出場を目指す意志が必要です。チーム活動に全力を注げる事</p>
+            </div>
+            <div class="roadmap-step active">
+                <h2>STEP 2：システムに参加して直接コーチングの権利を貰う</h2>
+                <p>即座に個人コーチングの権利は貰えません。システムを利用して権利を貰う。</p>
+            </div>
+            <div class="roadmap-step">
+                <h2>STEP 3：2025年12月1日までにChallenger到達</h2>
+                <p>それまでに本気で取り組み、Challengerを達成する必要があります。</p>
+            </div>
+            <div class="roadmap-step">
+                <h2>STEP 4：Razerのチームへ正式加入,(12月1日時点)</h2>
+                <p>12月時点でChallengerに到達したプレイヤーは『Razer』が率いるLJLチームに正式加入します(コーチはLisiten)</p>
+            </div>
+            <div class="roadmap-step">
+                <h2>STEP 5：2ヶ月のチーム集中訓練(12/1~)</h2>
+                <p>12月〜2月にかけてチーム練習を行います。ここで本格的なチームゲーム・連携を身につけます。</p>
+            </div>
+            <div class="roadmap-step">
+                <h2>STEP 6：1月22日～LJL本戦に出場</h2>
+                <p>2025年春、LJL出場。本気でプロを目指す人のための最後の挑戦です。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 既存の説明・Discord連携システム説明はそのまま続く -->
+    <!-- 以下に今までの「コーチングシステム全体説明」などが続く -->
+
+</body>
+
+<body>
+
+    <div class="container">
+        <h1>LISITENの直接コーチングを受けたい方</h1>
+        <p>
+            口だけ。やる気の姿勢だけの人完全お断りです。<strong>行動で証明した方のみ</strong>コーチングします。<br>
+            下記のシステムを確認して、努力した者のみChallengerになる秘訣を隅から隅までお教え致します。
+        </p>
+    </div>
+</body>
+
+<body>
+    <div class="container">
+        <h1>Discordで管理するコーチングシステムの全体説明</h1>
+        <p>
+            このコーチングは、単なる技術向上ではなく<strong>Discordを使った連携管理システム
+            </strong>で<br>「思考・姿勢・行動力」を鍛える人生を変える訓練環境です。
+        </p>
+
+        <h2>📌 Discord管理システム参加方法</h2>
+        <ul>
+            <li>⑴リンクからDiscordに参加/ルールに同意し『Player』ロールを貰う</li>
+
+<a href="https://discord.gg/UcZk8ZqATZ" target="_blank" rel="noopener noreferrer">
+  <img src="img/discord.png" alt="Discordに参加する" style="max-width: 120px; cursor: pointer; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+</a>
+            <li>
+                ⑵【APPLY】から自分のプロフィール情報を送信する。
+                <img src="img/apply.png" alt="プロフィール生成" class="flow-image">
+            </li>
+            <li>
+                ⑶ 当日中に【Players】にプロフィールが新規作成されます。
+                <img src="img/NEWProfile.png" alt="プロフィール生成" class="flow-image">
+            </li>
+            <li>
+                ⑷任務配布所で"任務LV1"と発言すると任務が与えられます。
+                <img src="img/ninmu.png" alt="プロフィール表示" class="flow-image">
+            </li>
+            <li>
+                ⑸"Players"の自分のプロフィールの所に以下の画像のように投稿(ファイル等も添付)
+                <img src="img/teisyutu.png" alt="任務割り当て" class="flow-image">
+            </li>
+            <li>
+                ⑹正しい情報を入力すると任務クリアと経験値（XP）がもらえてレベルアップ!
+                <img src="img/kuesuto.png" alt="経験値管理" class="flow-image">
+            </li>
+            <li>
+                ⑺一定レベルに達したプレイヤーだけが、直接コーチングを受けられる権利を得る
+                <img src="img/LV.png" alt="コーチング権獲得" class="flow-image">
+            </li>
+        </ul>
+
+        <div class="box">
+            ✅ Discord Botによる自動管理で、<strong>任務の進捗や成長がリアルタイムで把握可能</strong>です。<br>
+        </div>
+
+
+        <h2>🏆 Discord連携による成長の可視化(今後実装)</h2>
+        <ul>
+            <li>
+                プレイヤーのプロフィールカードはDiscord上で一覧管理され、いつでも確認可能
+                <img src="img/itiran.png" alt="プロフィールカード" class="flow-image">
+            </li>
+            <li>
+                レベルに応じた称号やTierアイコンもDiscord内で表示
+                <img src="images/grow3.png" alt="Tier表示" class="flow-image">
+            </li>
+            <li>
+                Discordのランキングチャンネルで、他プレイヤーと比較しながらモチベーションアップ
+                <img src="img/rank.png" alt="ランキング表示" class="flow-image">
+            </li>
+        </ul>
+
+        <h2>🚧 データ管理のルール</h2>
+        <ul>
+            <li>Discord上で任務をこなさないプレイヤーは一定期間後に自動データ削除【1週間】</li>
+            <li>削除されたプレイヤーは再度申し込み不可</li>
+
+        <div class="box">
+            やりきる者のみが、本当の成長を体験できます
+        </div>
+        </ul>
+
+        <h2>🎯 求める人物像</h2>
+        <ul>
+            <li>Discordでの円滑なコミュニケーションが取れること</li>
+            <li>論理的思考・指摘を素直に受け入れられること</li>
+            <li>行動力と責任感があること</li>
+            <li>継続力を持ち、Discordを活用して成長出来る事</li>
+        </ul>
+        <p class="note">※暴言や感情的な行動はDiscordコミュニティでの禁止事項です。</p>
+
+        <h2>⚠️ 脱落しやすいパターン</h2>
+        <ul>
+            <li>最初にやる気だけある人</li>
+            <li>成果を急ぎすぎて過程を軽視する人</li>
+            <li>自己評価ばかりに固執し成長意欲がない人</li>
+        </ul>
+
+        <div class="box">
+            💡 Discordと連携した環境で<br>
+            本気で成長したい人のためのシステムです。
+        </div>
+
+        <h2>🌟 最後に</h2>
+        <p>
+            LOLに情熱を注ぎたいなら。<br>
+            Discord管理システムで、あなたの成長を全力サポートします。<br>
+            <strong>ここがあなたの新しいスタート地点です。</strong>
+        </p>
+    </div>
+</body>
+
+<script>
+document.querySelectorAll('.clickable-img').forEach(img => {
+  img.addEventListener('click', () => {
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    modalImg.src = img.src; // 元画像をセット（最大解像度の画像URLに置換可）
+    modal.style.display = 'flex';
+  });
+});
+
+document.getElementById('modal-close').addEventListener('click', () => {
+  document.getElementById('modal').style.display = 'none';
+});
+
+// モーダルの背景クリックで閉じる
+document.getElementById('modal').addEventListener('click', e => {
+  if(e.target.id === 'modal') {
+    e.target.style.display = 'none';
+  }
+});
+</script>
+
+</html>

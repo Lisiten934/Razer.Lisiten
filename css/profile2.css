@@ -1,0 +1,70 @@
+.profile-card {
+  max-width: 1200px;  /* デフォルトより大きめに */
+  margin: 40px auto; /* 上下余白＋中央寄せ */
+  padding: 30px 40px; /* 内側余白を広げて余裕を持たせる */
+  background: #e6f0ff; /* 薄い青 */
+  border-radius: 12px;
+  display: flex;
+  align-items: center; /* これで画像とテキストの縦中央揃え */
+  gap: 30px;
+  box-shadow: 0 4px 12px rgba(0, 90, 255, 0.2);
+}
+
+.profile-card:hover {
+    box-shadow: 0 10px 25px rgba(74, 144, 226, 0.5);
+}
+
+.profile-image {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 12px rgba(74, 144, 226, 0.6);
+    flex-shrink: 0;
+}
+
+.profile-info {
+    flex: 1;
+    font-size: 1.1rem;
+    color: #1e293b;
+}
+
+.profile-info h3 {
+    color: #2563eb;
+    margin-top: 16px;
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-bottom: 3px solid #2563eb;
+    padding-bottom: 4px;
+}
+
+.profile-info ul {
+    list-style-type: disc;
+    padding-left: 1.4em;
+    margin-top: 0;
+}
+
+.profile-info ul li {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* ここに青い枠と光るエフェクト */
+
+.highlight {
+  border: 2px solid #2563eb; /* 青い枠線 */
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px 3px rgba(37, 99, 235, 0.6);
+  background-color: #e6f0ff; /* 薄い青背景 */
+  font-weight: 700;
+  transition: box-shadow 0.5s ease;
+}
+
+.highlight:hover {
+  box-shadow: 0 0 20px 6px rgba(37, 99, 235, 0.9);
+  cursor: pointer;
+}
+
+

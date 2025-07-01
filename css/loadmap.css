@@ -1,0 +1,80 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9fafb;
+    color: #333;
+    margin: 0;
+    padding: 40px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #111;
+}
+
+.roadmap {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+}
+
+.roadmap-step {
+    background: #ffffff;
+    padding: 20px 24px;
+    border-left: 8px solid #3b82f6;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.6s forwards;
+}
+
+.roadmap-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.roadmap-step.active {
+    border-color: #10b981;
+    background: #f0fdf4;
+}
+
+/* 簡単なアニメーション */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* コメントアウト：左からスライドインアニメーション */
+/*
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+*/
+
+/* コメントアウト：点滅する矢印 */
+/*
+.blinking-arrow {
+    display: inline-block;
+    animation: blinkArrow 1s infinite;
+}
+
+@keyframes blinkArrow {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+*/

@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>仕事依頼・コンタクト</title>
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: #f5f5f5;
+        margin: 0; padding: 40px;
+        color: #333;
+    }
+    .container {
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 16px rgba(0,0,0,0.08);
+        text-align: center;
+    }
+    h1 {
+        margin-bottom: 20px;
+    }
+    .alert {
+        background: #fff3cd;
+        border-left: 6px solid #ffa726;
+        padding: 12px 16px;
+        border-radius: 8px;
+        margin: 20px 0;
+        color: #8a6d3b;
+    }
+    a.contact-link {
+        display: inline-block;
+        margin: 15px 10px;
+        padding: 12px 24px;
+        background-color: #1da1f2;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease;
+    }
+    a.contact-link.discord {
+        background-color: #5865F2;
+    }
+    a.contact-link:hover {
+        opacity: 0.8;
+    }
+    p.note {
+        margin-top: 25px;
+        font-size: 0.95rem;
+        color: #555;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>仕事のお問合せ専用フォーム</h1>
+        <div class="alert">
+            ※この窓口はビジネス・業務依頼限定です。<br>
+            コーチング応募は別途専用フォームからお願いします。
+        </div>
+
+        <p>以下の方法でお気軽にご連絡ください。</p>
+
+        <a href="https://twitter.com/messages/compose?recipient_id=1480491524563808263" class="contact-link" target="_blank" rel="noopener noreferrer">
+            Twitter ダイレクトメッセージで連絡
+        </a>
+
+        <a href="https://discord.gg/UcZk8ZqATZ" class="contact-link discord" target="_blank" rel="noopener noreferrer">
+            Discord サーバーで連絡
+        </a>
+
+        <p class="note">
+            2営業日以内に返信いたします。  
+            連絡の際は用件を明確にお願いいたします。
+        </p>
+    </div>
+</body>
+</html>

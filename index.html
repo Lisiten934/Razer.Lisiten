@@ -53,23 +53,25 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 50;
+      z-index: 81;
       user-select: none;
       font-family: 'Segoe UI', sans-serif;
     }
 
-    img {
-      position: absolute;
-      width: 700px;
-      height: 800px;
-      opacity: 0;
-      z-index: 10;
-    }
+    .left-img,
+   .right-img {
+  position: absolute;
+  width: 32vw;       /* 横幅を大きく（または小さく）指定 */
+  height:  39.06vw;     /* 高さを固定して潰す */
+  opacity: 0;
+  z-index: 80;
+  pointer-events: none;
+  object-fit: fill;  /* ← アスペクト比を潰すキー！ */
+}
 
     .left-img {
       left: 5%;
-      top: 65%;
-      transform: translateY(-50%);
+      bottom: 0; /* ←ここを変更 */
       animation: fadeIn 1.5s ease forwards, moveLeftToRight 3s cubic-bezier(0.8, 0, 0.2, 1) forwards;
       animation-delay: 0s, 2s;
       z-index: 80;
@@ -78,8 +80,7 @@
 
     .right-img {
       right: 5%;
-      top: 60%;
-      transform: translateY(-50%);
+      bottom: 0; /* ←ここを変更 */
       animation: fadeIn 1.5s ease forwards, moveRightToLeft 3s cubic-bezier(0.8, 0, 0.2, 1) forwards;
       animation-delay: 0s, 2s;
       pointer-events: none;
@@ -230,10 +231,27 @@
       opacity: 1;
     }
 
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 1; /* すべての要素より下に置きたいなら 1～5くらい */
+  pointer-events: none;
+}
+
   </style>
 </head>
 
 <body>
+
+<!-- これを適用すると背景ががらりと変わります。 -->
+<!-- <video autoplay muted loop playsinline id="bg-video"> -->
+<!-- <source src="img/site.mp4" type="video/mp4"> -->
+<!-- </video> -->
+
 
   <div class="sponsor-banner">
     <div class="scroll-text">
@@ -320,5 +338,10 @@
       setInterval(showSupporter, 4000);
     });
   </script>
+
+<script>
+  console.log("このページにアクセスされました");
+</script>
+
 </body>
 </html>

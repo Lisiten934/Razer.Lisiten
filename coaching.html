@@ -2,494 +2,71 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>Lisitenコーチングシステム(Discord管理版)</title>
+  <title>Lisitenコーチングシステム - 一時閉鎖中</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="css/roadmap.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-  <style>
-    .highlight {
-      color: #e53935;
-      font-weight: bold;
-    }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f8f8f8;
-      padding: 40px;
-      color: #333;
-      line-height: 1.7;
-    }
-    .container {
-      max-width: 880px;
-      margin: auto;
-      margin-bottom: 60px;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    }
-    h1, h2 {
-      color: #222;
-    }
-    h2 {
-      margin-top: 32px;
-      border-left: 6px solid #4caf50;
-      padding-left: 12px;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 14px;
-    }
-    .box {
-      background: #f0f0f0;
-      padding: 12px 16px;
-      border-radius: 8px;
-      margin-top: 12px;
-      margin-bottom: 20px;
-    }
-    .note {
-      font-size: 0.9em;
-      color: #888;
-    }
-    strong {
-      color: #222;
-    }
-    .flow-image {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      margin-top: 10px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .image-row {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-    }
-    .image-box {
-      width: 400px;
-      border-radius: 12px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      background: #fff;
-      text-align: center;
-      cursor: pointer;
-      user-select: none;
-    }
-    .clickable-img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px 8px 0 0;
-      display: block;
-      object-fit: contain;
-    }
-    .modal {
-      position: fixed;
-      z-index: 9999;
-      left: 0; top: 0; width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.3);
-    }
-    .modal-close {
-      position: fixed;
-      top: 30px;
-      right: 30px;
-      color: white;
-      font-size: 3rem;
-      font-weight: bold;
-      cursor: pointer;
-      user-select: none;
-    }
-    /* Swiperスライダー */
-    .swiper {
-      width: 100%;
-      height: 80vh;
-      margin-bottom: 40px;
-    }
-    .swiper-slide {
-      width: 70vw;
-      max-width: 800px;
-      height: 60vh; /* 画像含め全体の高さを調整 */
-      margin: auto;
-      background: #263347;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(100, 140, 180, 0.4);
-      overflow: hidden;
-      padding: 20px;
-      transition: transform 0.5s ease;
-    }
-
-.card-img {
-  width: 100%;
-  height: 450px;           /* 統一された高さに固定 */
-  object-fit: cover;       /* はみ出してもOK、見た目が揃う */
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(50, 70, 90, 0.5);
-}
-
-    .card-title {
-      font-size: 1.8rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: #a8c0ff;
-      text-align: center;
-    }
-    .card-text {
-      font-size: 1rem;
-      text-align: center;
-      color: #cdd6f4;
-      line-height: 1.4;
-    }
-    .swiper-button-next,
-    .swiper-button-prev {
-      display: none;
-    }
-
-.header-box {
-  max-width: 880px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 2px solid #4caf50; /* 軽い緑の枠線 */
-  border-radius: 12px;
-  text-align: center;
-  background: #f0f9f0; /* 薄い緑の背景 */
-}
-
-.header-box h1 {
-  font-size: 2.8rem;
-  color: #2e7d32; /* 濃い緑 */
-  margin: 0;
-}
-
-.hero-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
-  padding: 0 20px;
-  text-align: center;
-}
-
-.hero-title h1 {
-  position: relative;             /* 追加 */
-  font-size: 6rem;
-  font-weight: 600;
-  color: #f5c76b;
-  text-shadow: 0 2px 8px rgba(245, 199, 107, 0.6);
-  padding-bottom: 8px;            /* border-bottom は下線に変えるので外す */
-  width: 100%;                   
-  max-width: none;
-  margin: 0 auto;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 0.05em;
-  text-align: center;
-  box-sizing: border-box;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-/* 下線の代わりに疑似要素でアニメーション線を作る */
-.hero-title h1::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 0;
-  background-color: #f5c76b;
-  transition: width 1.5s ease;
-}
-
-/* クラス追加で線を伸ばす */
-.hero-title h1.animate-underline::after {
-  width: 100%;
-}
-
-  </style>
-</head>
-<body>
-
-<div class="hero-title">
-  <h1>Lisitenコーチング５大メリット</h1>
-</div>
-
-<script>
-window.addEventListener('load', () => {
-  document.querySelector('.hero-title h1').classList.add('animate-underline');
-});
-</script>
-
-  <!-- Swiperスライダー -->
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img class="card-img" src="img/LJL.jpg" alt="LJL出場確約" />
-        <div class="card-title">壱.２０２６年LJL出場確約</div>
-        <div class="card-text">12月ギリギリでチーム探し等不要です。確約出場になります。他のチームは事前に練習等殆どせずに出場しますが、こちらは事前２ヵ月間しっかりと練習をして臨みます。もちろん１位を目指します。</div>
-      </div>
-      <div class="swiper-slide">
-        <img class="card-img" src="img/geha.jpg" alt="ゲーミングハウス" />
-        <div class="card-title">弐.12月までにゲーミングハウス設立予定</div>
-        <div class="card-text">ゲハでプロレベルの活動量の確保も可能。オンラインでの対応も行っており自由の幅を広げております。</div>
-      </div>
-      <div class="swiper-slide">
-        <img class="card-img" src="img/b.jpg" alt="実績" />
-        <div class="card-title">参.【RAZER選手】と共にLJLに参加！！</div>
-        <div class="card-text">個人コーチングにてGrandMaster⇑に成った場合、Razer(Challenger)と一緒に出場確定。彼はわずかMID転向3ヵ月でチャレンジャーになる逸材です。同じレベルの人間の日本人を後５人集めて最強チームを作ります。</div>
-      </div>
-      <div class="swiper-slide">
-        <img class="card-img" src="img/corach.png" alt="実績" />
-        <div class="card-title">四.圧倒的なコーチング能力</div>
-        <div class="card-text">LOLに関して答えられない質問は有りません。チームコーチも何度も経験しております。<br>コーチ本人もソロQを6日でマスターになれるレベル(2024年)</div>
-      </div>
-      <div class="swiper-slide">
-        <img class="card-img" src="img/site.png" alt="超万能" />
-        <div class="card-title">五.超万能なサポート可能</div>
-        <div class="card-text">このWEBサイトも手作りです。他にも動画管理/動画編集/アイコン制作/画像制作/画像編集/配信環境の整備(シーンやパネル等)/Discord制作＆整備/Web制作/スプレッドシート制作 PCトラブル何でも出来ます。</div>
-      </div>
-    </div>
-  </div>
-
-<body>
-
-        <div class="container">
-        <h1>過去個人コーチングの実績について</h1>
-        <p>
-            コーチングを実際に受けたプレイヤーは以下のように短い時間で<strong class="gold-text">challenger</strong>に到達しております。
-        </p>
-
-<div class="image-row">
-  <div class="image-box">
-    <img src="img/C2.png" alt="左画像" class="clickable-img" />
-    <div class="overlay-text">3ヵ月"チャレンジャー"到達</div>
-  </div>
-  <div class="image-box">
-    <img src="img/C1.png" alt="右画像" class="clickable-img" />
-    <div class="overlay-text">8ヵ月"チャレンジャー"到達</div>
-  </div>
-</div>
-
-<!-- モーダル -->
-<div id="modal" class="modal" style="display:none;">
-  <span id="modal-close" class="modal-close">&times;</span>
-  <img class="modal-content" id="modal-img" alt="拡大画像" />
-</div>
-
-        <ul>
-            <li>プレイヤーが本気で学ぶ姿勢があれば<span class="highlight">１～２ヵ月</span>でも到達可能です。</li>
-            <li>現在コーチング中プレイヤーは既に<span class="highlight">ゴールド⇒エメラルド到達(12日間)</span>
-        </ul>
-        <div class="box">
-            <strong>最低限チャレンジャー</strong>は当たり前という世界をお見せ出来ます。
-        </div>
-
-    <div class="container">
-        <h1>🎓 "Challenger育成システム"参加前に必ずお読みください</h1>
-        <p>
-            コーチングは誰でも受けられるものではありません。<br>
-            以下の<strong>条件を全て満たす人のみ</strong>参加が許可されます。
-        </p>
-        <ul>
-            <li><span class="highlight">2025年12月1日までにChallenger</span>になる決意と努力があること。</li>
-            <li>チャレンジャーが<span class="highlight">チームゲームの初期地点</span>だと思える方</li>
-            <li>2026年のLJLに<span class="highlight">"確実に参加"</span>できる事。
-            <li>コーチングでGrandMaster以上に成った場合<span class="highlight">Nexus Veil(仮名:RazerTeam)</span>として活動をする事。</li>
-            <li>12月1日~スクリム等が<span class="highlight">19時~24時で参加出来る事。</span></li>
-            <li>12月1日~充てられる時間は全て<span class="highlight">チームゲームに使用する事。</span></li>
-            <li>チームの一員として<span class="highlight">練習・報告・行動</span>の全てに責任を持てること。</li>
-        </ul>
-        <div class="box">
-            この条件を満たせる人にだけ、<strong>本気のコーチング</strong>と<strong>LJL出場</strong>という現実の舞台を用意しています。
-        </div>
-    </div>
-
-    <div class="container">
-        <h1>LISITENの直接コーチングを受けたい方</h1>
-        <p>
-            口だけ。やる気の姿勢だけの人完全お断りです。<strong>行動で証明した方のみ</strong>コーチングします。<br>
-            下記のシステムを確認して、努力した者のみChallengerになる秘訣を隅から隅までお教え致します。
-        </p>
-    </div>
-</body>
-
-<body>
-    <div class="container">
-        <h1>Challenger育成システム全体説明(Discord管理)</h1>
-        <p>
-            このコーチングは、単なる技術向上ではなく<strong>Discordを使った連携管理システム
-            </strong>で<br>「思考・姿勢・行動力」を鍛える人生を変える訓練環境です。
-        </p>
-
-        <h2>📌 Challenger育成システム参加方法</h2>
-        <ul>
-            <li>⑴リンクからDiscordに参加/ルールに同意し『Player』ロールを貰う➤(現在リンク先トラブル対応中。こちらのURLを直接添付してください)https://discord.gg/WFWC46FxhH</li>
-
-<a href="https://discord.gg/WFWC46FxhH" target="_blank" rel="noopener noreferrer">
-  <img src="img/discord.png" alt="Discordに参加する" style="max-width: 120px; cursor: pointer; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-</a>
-            <li>
-                ⑵<a href="https://lisiten934.github.io/Razer.Lisiten/apply.html" target="_blank" rel="noopener noreferrer">【APPLY】</a>から自分のプロフィール情報を送信する。
-                <img src="img/apply.png" alt="プロフィール生成" class="flow-image">
-            </li>
-            <li>
-                ⑶ 当日中(24時間)に【Players】にプロフィールが新規作成されます。<br>この間にDisocrd内にある"サーバールール"や"任務ルールブック"を熟読しておきましょう。
-                <img src="img/NEWProfile.png" alt="プロフィール生成" class="flow-image">
-            </li>
-            <li>
-                ⑷任務配布所で"任務LV1"と発言すると任務が与えられます。
-                <img src="img/ninmu.png" alt="プロフィール表示" class="flow-image">
-            </li>
-            <li>
-                ⑸"Players"の自分のプロフィールの所に以下の画像のように投稿(ファイル等も添付)
-                <img src="img/teisyutu.png" alt="任務割り当て" class="flow-image">
-            </li>
-            <li>
-                ⑹正しい情報を入力すると任務クリアと経験値（XP）がもらえてレベルアップ!
-                <img src="img/kuesuto.png" alt="経験値管理" class="flow-image">
-            </li>
-            <li>
-                ⑺一定レベルに達したプレイヤーだけが、直接コーチングを受けられる権利を得る
-                <img src="img/LV.png" alt="コーチング権獲得" class="flow-image">
-            </li>
-        </ul>
-
-        <div class="box">
-            ✅ Discord Botによる自動管理で、<strong>任務の進捗や成長がリアルタイムで把握可能</strong>です。<br>
-        </div>
-
-
-        <h2>🏆 Discord連携による成長の可視化</h2>
-        <ul>
-            <li>
-                プレイヤーのプロフィールカードはDiscord上で一覧管理され、いつでも確認可能
-                <img src="img/itiran.png" alt="プロフィールカード" class="flow-image">
-            </li>
-            <li>
-                Discordのランキングチャンネルで、他プレイヤーと比較しながらモチベーションアップ
-                <img src="img/rank.png" alt="ランキング表示" class="flow-image">
-            </li>
-        </ul>
-
-        <h2>🚧 データ管理のルール</h2>
-        <ul>
-            <li>Discord上で任務をこなさないプレイヤーは一定期間後に自動データ削除【1週間】</li>
-            <li>削除されたプレイヤーは再度申し込み不可</li>
-
-        <div class="box">
-            やりきる者のみが、本当の成長を体験できます
-        </div>
-        </ul>
-
-        <h2>🎯 求める人物像</h2>
-        <ul>
-            <li>Discordでの円滑なコミュニケーションが取れること</li>
-            <li>論理的思考・指摘を素直に受け入れられること</li>
-            <li>行動力と責任感があること</li>
-            <li>継続力を持ち、Discordを活用して成長出来る事</li>
-        </ul>
-        <p class="note">※暴言や感情的な行動はDiscordコミュニティでの禁止事項です。</p>
-
-        <h2>⚠️ 脱落しやすいパターン</h2>
-        <ul>
-            <li>最初にやる気だけある人</li>
-            <li>成果を急ぎすぎて過程を軽視する人</li>
-            <li>言われた事に対して無駄に意味を考える人</li>
-            <li>自己評価ばかりに固執し成長意欲がない人</li>
-        </ul>
-
-        <div class="box">
-            💡 Discordと連携した環境で
-            本気で成長したい人のためのシステムです。
-        </div>
-
-        <h2>🌟 最後に</h2>
-        <p>
-            LOLに情熱を注ぎたいなら。<br>
-            Discord管理システムで、あなたの成長を全力サポートします。<br>
-            <strong>ここがあなたの新しいスタート地点です！</strong>
-        </p>
-    </div>
-</body>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- ▼ 自動リダイレクト設定（指定日以降にindex_real.htmlへ戻す） -->
   <script>
-    const swiper = new Swiper(".mySwiper", {
-      effect: "coverflow",
-      centeredSlides: true,
-      loop: true,
-      grabCursor: true,
-      slidesPerView: "auto",
-      coverflowEffect: {
-        rotate: 0,
-        stretch: 0,
-        depth: 250,
-        modifier: 2.5,
-        slideShadows: false,
-      },
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      speed: 800,
-    });
+    // 自動再開する日時（例: 2025年11月1日 00:00）
+    const reopenDate = new Date("2025-11-01T00:00:00+09:00");
+    const now = new Date();
 
-    // モーダル処理の例（画像クリックで拡大表示）
-    document.querySelectorAll('.clickable-img').forEach(img => {
-      img.addEventListener('click', () => {
-        const modal = document.getElementById('modal');
-        const modalImg = document.getElementById('modal-img');
-        modal.style.display = 'flex';
-        modalImg.src = img.src;
-      });
-    });
-    document.getElementById('modal-close').addEventListener('click', () => {
-      document.getElementById('modal').style.display = 'none';
-    });
-    document.getElementById('modal').addEventListener('click', e => {
-      if(e.target === e.currentTarget) {
-        e.currentTarget.style.display = 'none';
-      }
-    });
+    // 指定日時を過ぎていたら本来のページにリダイレクト
+    if (now >= reopenDate) {
+      window.location.href = "index_real.html"; // ←元のページ名に変更OK
+    }
   </script>
 
-<script>
-document.querySelectorAll('.clickable-img').forEach(img => {
-  img.addEventListener('click', () => {
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-img');
-    modalImg.src = img.src; // 元画像をセット（最大解像度の画像URLに置換可）
-    modal.style.display = 'flex';
-  });
-});
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+      background: radial-gradient(circle at center, #2c2c2c, #1a1a1a);
+      color: #f5c76b;
+      text-align: center;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
 
-document.getElementById('modal-close').addEventListener('click', () => {
-  document.getElementById('modal').style.display = 'none';
-});
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
 
-// モーダルの背景クリックで閉じる
-document.getElementById('modal').addEventListener('click', e => {
-  if(e.target.id === 'modal') {
-    e.target.style.display = 'none';
-  }
-});
-</script>
+    p {
+      font-size: 1.2rem;
+      color: #ddd;
+      margin: 10px 0;
+    }
 
+    .note {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    /* ▼ 簡易アニメーション */
+    .fade {
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fade">
+    <h1>Lisitenコーチングシステム</h1>
+    <p>現在、メンテナンスのため一時閉鎖中です。</p>
+    <div class="note">© 2025 Lisiten Coaching System</div>
+  </div>
+</body>
 </html>
